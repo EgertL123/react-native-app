@@ -1,6 +1,6 @@
 import React from "react";
 import {SafeAreaView} from "react-native";
-import Splash from "./(tabs)/index";
+import Splash from "./(tabs)";
 
 const Layout = () => {
     return (
