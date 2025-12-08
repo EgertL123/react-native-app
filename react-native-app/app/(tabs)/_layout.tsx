@@ -1,35 +1,61 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
+import { Tabs } from "expo-router";
+import { Image } from 'react-native';
+import { colors } from '@/utils/colors';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+export default function TabLayout () {
+    return (
+        <Tabs
+            screenOptions={{
+                headerShown: false,
+                tabBarShowLabel: false,
+                tabBarStyle: {borderTopColor: colors.lightGray}
+        }}>
+            <Tabs.Screen
+                name="home"
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <Image
+                            source={focused ? require('@/assets/tabs/home_active.png') : require('@/assets/tabs/home.png')}
+                            style={{
+                                width: 24,
+                                height: 24,
+                                resizeMode: 'contain'
+                        }}
+                        />
+                    )
+                }}
+            />
+            <Tabs.Screen
+                name="favorites"
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <Image
+                            source={focused ? require('@/assets/tabs/bookmark_active.png') : require('@/assets/tabs/bookmark.png')}
+                            style={{
+                                width: 24,
+                                height: 24,
+                                resizeMode: 'contain'
+                            }}
+                        />
+                    )
+                }}
+            />
+            <Tabs.Screen
+                name="profile"
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <Image
+                            source={focused ? require('@/assets/tabs/profile_active.png') : require('@/assets/tabs/profile.png')}
+                            style={{
+                                width: 24,
+                                height: 24,
+                                resizeMode: 'contain'
+                            }}
+                        />
+                    )
+                }}
+            />
+        </Tabs>
+    )
 }
