@@ -5,21 +5,6 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 
 export default function Layout() {
-    const isSignedIn = true;
-    const router = useRouter();
-
-    useEffect(() => {
-        // Add setTimeout to ensure navigation happens after mount
-        const timeout = setTimeout(() => {
-            if (isSignedIn) {
-                router.replace('/(tabs)/home');
-            } else {
-                router.replace('/');
-            }
-        }, 0);
-
-        return () => clearTimeout(timeout);
-    }, [isSignedIn]);
 
     return (
         <SafeAreaProvider>

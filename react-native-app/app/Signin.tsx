@@ -3,6 +3,7 @@ import {
     StyleSheet,
     Text,
     View,
+    Alert,
 } from 'react-native';
 import AuthHeader from "@/components/ui/AuthHeader";
 import Input from "@/components/ui/Input";
@@ -10,15 +11,39 @@ import Button from "@/components/Button";
 import Separator from "@/components/ui/Separator";
 import GoogleLogin from "@/components/ui/GoogleLogin";
 import {colors} from "@/utils/colors";
+import { useRouter } from 'expo-router';
 
 export default function Signin() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const router = useRouter();
+
+    const onSubmit = () => {
+        if (!email || !password) {
+            Alert.alert("Validation", "Please fill all fields");
+            return;
+        }
+
+        router.push("/(tabs)/home");
+    };
 
     return (
         <View style={styles.container}>
             <AuthHeader title="Sign In" />
-            <Input label="Email" placeholder="example@gmail.com" isPassword={false} />
-            <Input isPassword label="Password" placeholder="******"/>
-            <Button style={styles.button} title="Sign In" onPress={undefined} />
+            <Input
+                label="Email"
+                placeholder="example@gmail.com"
+                isPassword={false}
+                value={email}
+                onChangeText={setEmail}
+            />
+            <Input isPassword
+                   label="Password"
+                   placeholder="******"
+                   value={password}
+                   onChangeText={setPassword}
+            />
+            <Button style={styles.button} title="Sign In" onPress={onSubmit} />
             <Separator text="Or sign up with" />
             <GoogleLogin />
             <Text style={styles.footerText}>Already have an account?

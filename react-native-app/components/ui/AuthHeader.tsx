@@ -17,6 +17,7 @@ const AuthHeader = ({title}) => {
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 40,
         flexDirection: 'row',
         alignItems: 'center',
     },
