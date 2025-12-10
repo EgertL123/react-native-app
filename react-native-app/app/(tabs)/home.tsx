@@ -23,14 +23,12 @@ export default function Home() {
 
         let filtered = products;
 
-        // Filter by search query
         if (query.trim()) {
             filtered = filtered.filter((p) =>
                 p.name.toLowerCase().includes(query.toLowerCase())
             );
         }
 
-        // Filter by category (unless "popular" which shows all)
         if (activeCategory !== "popular") {
             filtered = filtered.filter((p) => p.category === activeCategory);
         }
@@ -43,14 +41,12 @@ export default function Home() {
 
         let filtered = products;
 
-        // Apply search filter if there's a query
         if (searchQuery.trim()) {
             filtered = filtered.filter((p) =>
                 p.name.toLowerCase().includes(searchQuery.toLowerCase())
             );
         }
 
-        // Apply category filter
         if (category !== "popular") {
             filtered = filtered.filter((p) => p.category === category);
         }
@@ -117,16 +113,19 @@ export default function Home() {
                     </View>
                 </ScrollView>
 
-                {/* Products */}
                 <View style={styles.productsGrid}>
                     {displayedProducts.map((product) => (
-                        <View key={product.id} style={styles.productCard}>
+                        <Pressable
+                            key={product.id}
+                            style={styles.productCard}
+                            onPress={() => router.push(`/details?productId=${product.id}`)}
+                        >
                             <View style={styles.productImageContainer}>
                                 <Image source={product.image} style={styles.productImage} />
                             </View>
                             <Text style={styles.productName}>{product.name}</Text>
                             <Text style={styles.productPrice}>$ {product.price.toFixed(2)}</Text>
-                        </View>
+                        </Pressable>
                     ))}
                 </View>
             </View>

@@ -16,6 +16,7 @@ export default function Layout() {
                 <Stack.Screen name="Signin" />
                 <Stack.Screen name="Signup" />
                 <Stack.Screen name="(tabs)" />
+                <Stack.Screen name="details" />
             </Stack>
         </SafeAreaProvider>
     );

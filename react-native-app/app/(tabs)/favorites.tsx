@@ -68,14 +68,15 @@ const styles = StyleSheet.create({
         width: "100%",
         padding: 10,
         flexDirection: "row",
-        alignItems: "center",
+        alignItems: "flex-start",
         position: "relative"
     },
     image: {
         width: 100,
         height: 100,
         borderRadius: 10,
-        marginRight: 15
+        marginRight: 15,
+        alignSelf: "flex-start"
     },
     removeIcon: {
         position: "absolute",
