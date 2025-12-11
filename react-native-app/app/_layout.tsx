@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { colors } from "@/utils/colors";
-import { Stack, useRouter } from 'expo-router';
+import { Stack } from 'expo-router';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 

@@ -153,8 +153,8 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     searchIcon: {
-        width: 24,
-        height: 24,
+        width: 21,
+        height: 21,
         marginRight: 10,
     },
     searchInput: {
