@@ -1,50 +1,53 @@
-# Welcome to your Expo app 👋
+# 📱 React Native App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A starter React Native mobile application built with TypeScript and ready for further development.
 
-## Get started
+## 🛠️ Features
 
-1. Install dependencies
+📱 Basic React Native app setup
 
-   ```bash
-   npm install
-   ```
+⚛️ Main app component structure
 
-2. Start the app
+🧪 TypeScript support
 
-   ```bash
-   npx expo start
-   ```
+🚀 Cross-platform: iOS & Android
 
-In the output, you'll find options to open the app in a
+## 🚀 Getting Started
+1. Clone the repo
+git clone https://github.com/EgertL123/react-native-app.git
+cd react-native-app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+2. Install dependencies
+npm install
+or
+yarn
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+3. Run on iOS
+npx react-native run-ios
 
-## Get a fresh project
+4. Run on Android
+npx react-native run-android
 
-When you're ready, run:
 
-```bash
-npm run reset-project
+Make sure you have the necessary environment setup for React Native: Node.js, Android Studio (or Xcode for iOS). 
+GitHub
+
+## 📂 Project Structure
+```
+/
+├── app/              # Contains all routes and screens for the application
+│   ├── (tabs)/       # Layout and screens for the main tab navigation
+│   ├── Signin.tsx    # Sign-in screen
+│   ├── Signup.tsx    # Sign-up screen
+│   ├── details.tsx   # Product details screen
+│   └── index.tsx     # Initial splash/entry screen
+├── components/       # Reusable UI components (Button, Input, Checkbox)
+├── constants/        # Application constants like theme and colors
+├── hooks/            # Custom React hooks
+└── utils/            # Shared utility functions
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🧩 How It Works
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This is a simple React Native template to quickly start mobile app development.
+It uses React Native CLI structure, which is standard for native apps across Android & iOS. 
